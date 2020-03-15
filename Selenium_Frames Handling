@@ -1,0 +1,36 @@
+package frames;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Frameswitch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ 
+		WebDriver driver = new FirefoxDriver();
+        driver.get("https://selenium.dev/selenium/docs/api/java/");
+        driver.manage().window().maximize();
+        //dynamic waits
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.switchTo().frame("packageListFrame"); 	
+        driver.findElement(By.xpath("//a[contains(text(),'com.thoughtworks.selenium')]")).click();
+        driver.switchTo().defaultContent();	
+        
+        driver.switchTo().frame("classFrame");
+        driver.findElement(By.xpath("//a[contains(text(),'com.thoughtworks.selenium')]")).click();
+        driver.switchTo().defaultContent();	
+        
+        driver.switchTo().frame("packageFrame");
+        driver.findElement(By.linkText("AbstractAnnotations")).click();
+        driver.switchTo().defaultContent();
+        
+        
+        
+	}	
+        
+}

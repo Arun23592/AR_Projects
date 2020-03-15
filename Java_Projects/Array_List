@@ -1,0 +1,23 @@
+package stringbuffer;
+
+import java.util.ArrayList;
+
+public class Array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+          ArrayList<String> al = new ArrayList<String>();
+          al.add("ICICI");
+          al.add("SIB");
+          al.add("Chase");
+          al.add("SBI");
+          al.add("HDFC");
+          System.out.println("An initial list of elements: "+al);
+          al.remove("SIB");
+          System.out.println("After invoking remove(object) method: "+al);
+          al.remove(0);
+          System.out.println("After invoking remove(index) method: "+al);
+          
+	}
+
+}

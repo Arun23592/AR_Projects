@@ -1,0 +1,22 @@
+package selenium;
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String sDay = "Sunday";
+		int iDay = 8;
+ 
+		if(sDay.equals("Sunday")){
+			System.out.println("Today is Sunday");
+		}else{
+			System.out.println("Today is not Sunday");
+		}
+ 
+		if(iDay==6){
+			System.out.println("Today is Sunday");
+		}else{
+			System.out.println("Today is not Sunday");
+		}
+	}
+	}

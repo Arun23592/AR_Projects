@@ -1,0 +1,15 @@
+package stringbuffer;
+
+public class Splitstring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      String str = "India is My country";
+      String[] arr = str.split(" ");
+      
+      for(String s: arr)
+    	  System.out.println(s);
+    	  
+	}
+
+}

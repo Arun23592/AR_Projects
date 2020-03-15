@@ -1,0 +1,56 @@
+package registerform;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Loginreg {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver_win32\\chromedriver.exe");
+		   WebDriver driver = new ChromeDriver();
+		   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		   System.out.println("chrome launch"); 
+		   driver.get("https://sleepy-citadel-05610.herokuapp.com/");
+		   driver.manage().window().maximize();
+		   driver.findElement(By.xpath("/html/body/app-root/app-nav/nav/ul/li[2]/a")).click();
+		   driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("arunsubramani20@gmail.com");
+		   driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")).sendKeys("Login1234");
+		   driver.findElement(By.xpath("//button[@type='submit']")).click();
+		   driver.findElement(By.xpath("/html/body/app-root/div/app-restaurants/div[2]/a[1]/div/h5")).click();
+		   driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-restaurant[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tr[2]/td[2]/button[1]")).click();
+		   Alert alert = driver.switchTo().alert();
+		   String alertMessage = alert.getText();
+		   System.out.println(alertMessage);
+		   Thread.sleep(5000);
+		   driver.switchTo().alert().accept();
+		   
+		   driver.findElement(By.xpath("//*[@id=\"navbarDropdown\"]")).click();
+		   System.out.println("dropdown clicked");
+		   List<WebElement> list =  driver.findElements(By.xpath("//div[@class='dropdown-menu show' and @aria-labelledby='navbarDropdown']//a"));
+		   System.out.println(list.size());
+		   //Selecting Cart option from drop down
+		   for(int i=0; i<list.size(); i++) {
+			   System.out.println(list.get(i).getText());
+			 if(list.get(i).getText().equals("Cart")) {
+				 list.get(i).click();
+				 
+				
+			 }
+		   }
+		   
+		   
+		   
+		   
+		  
+           
+	}
+
+}

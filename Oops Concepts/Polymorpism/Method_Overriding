@@ -1,0 +1,26 @@
+package methodJava;
+
+public class Methodoverriding {
+	
+	public void diplay(char c) {        // overridden method
+		System.out.println(c);                 
+	}
+	class override extends Methodoverriding{            //Declaring a Method in subclass which is already exists in parentclass is know as Methodoverriding. 
+		public void diplay(float f) {            
+			System.out.println(f);
+		}
+	}
+	public void diplay(int b) {
+		System.out.println(b);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Methodoverriding obj = new Methodoverriding();
+        obj.diplay('b');
+        obj.diplay(25);
+        
+        
+	}
+
+}	

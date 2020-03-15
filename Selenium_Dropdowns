@@ -1,0 +1,33 @@
+package dropdown;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class dropdown {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.delta.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//*[@id=\"booking\"]/form/div[1]/div/div[1]/div[1]/div[2]/span/span[1]/span[1]")).click();
+		Select dropdown = new Select(driver.findElement(By.xpath("//*[@id=\"ui-list-selectTripType1\"]")));
+		dropdown.selectByVisibleText("One Way");
+		dropdown.selectByIndex(1);
+		dropdown.selectByValue("selectTripType-val");
+		dropdown.getAllSelectedOptions();  // get all selected options and returns a list
+		dropdown.getFirstSelectedOption();  // Return webelements of First selected option
+		dropdown.isMultiple();
+	
+		
+	}
+
+}

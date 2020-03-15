@@ -1,0 +1,37 @@
+package stringbuffer;
+
+public class Bubblesort {
+	
+	void Bubblesort (int arr[]) {
+		
+		int n = arr.length;                     // implementing buuble sort
+		for(int i=0; i<n-1; i++)
+			for(int j=0; j<n-i-1; j++)
+				if(arr[j]>arr[j+1])
+				{
+					int temp = arr[j];                   //swapping
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}
+		
+	}
+      
+	        void Printarray(int arr[]) {               // printing array
+	        	
+	        	int n= arr.length;
+	        	for(int i=0; i<n-1; ++i)
+	        		System.out.println(arr[i]+   "  ");
+	        }
+	
+	
+	
+	public static void main(String[] args) {               //Drive into Main method
+		// TODO Auto-generated method stub
+         Bubblesort obj = new Bubblesort();
+         int arr[] = {64, 34, 25, 12, 22, 11, 90};
+         obj.Bubblesort(arr);
+         System.out.println("sorted array");
+         obj.Printarray(arr);
+	}
+
+}

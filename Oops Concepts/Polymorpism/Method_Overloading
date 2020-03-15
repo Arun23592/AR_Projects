@@ -1,0 +1,29 @@
+package methodJava;
+
+public class Methodoverloding {
+
+	   public void display(char c)               
+	   {
+		  
+		   System.out.println(c);
+	   }
+	   
+	   public void display(int num, float a)                  //different Parameter
+	   {
+		   System.out.println(a + " " +num);
+	   }
+	   
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Methodoverloding obj = new Methodoverloding();	
+		obj.display('a');                                    
+		obj.display(25, 40);
+
+	}
+
+}
+
+
+//method disp() is overloaded based on the number of parameters – 
+//We have two methods with the name disp but the parameters they have are different. 
+//Both are having different number of parameters.
